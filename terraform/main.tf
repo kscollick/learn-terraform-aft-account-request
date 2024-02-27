@@ -2,12 +2,12 @@ module "sandbox" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
-    AccountEmail              = "aws-account+sandbox_asdiasdldie@c-path.org"
-    AccountName               = "C-Path sandbox-learn-aft"
-    ManagedOrganizationalUnit = "Sandbox"
-    SSOUserEmail              = "kscollick@c-path.org"
-    SSOUserFirstName          = "Keith"
-    SSOUserLastName           = "Scollick"
+    AccountEmail              = "aws-account+pubweb_fhygu@c-path.org"
+    AccountName               = "C-Path Public Website"
+    ManagedOrganizationalUnit = "US"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
   }
 
   account_tags = {
