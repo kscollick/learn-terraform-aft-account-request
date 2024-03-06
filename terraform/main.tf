@@ -1,8 +1,8 @@
-module "pubweb" {
+module "publicweb" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
-    AccountEmail              = "aws-account+pubweb_fhygu@c-path.org"
+    AccountEmail              = "aws-account+pubweb_feuwngh@c-path.org"
     AccountName               = "C-Path Public Website"
     ManagedOrganizationalUnit = "US"
     SSOUserEmail              = "jbowen@c-path.org"
@@ -23,5 +23,5 @@ module "pubweb" {
     group = "prod"
   }
 
-  account_customizations_name = "pubweb"
+  account_customizations_name = "publicweb"
 }
