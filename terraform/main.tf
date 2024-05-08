@@ -25,3 +25,57 @@ module "gitlabtest" {
 
   account_customizations_name = "gitlabtest"
 }
+module "fileuploadertest" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+fileuploadertest_unthed@c-path.org"
+    AccountName               = "C-Path File Uploader Test"
+    ManagedOrganizationalUnit = "US - Control Tower"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "Test"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "DCC#29"
+    change_reason       = "create account"
+  }
+
+  custom_fields = {
+    group = "test"
+  }
+
+  account_customizations_name = "fileuploadertest"
+}
+module "privateaipoc" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+privateaipoc_uynetd@c-path.org"
+    AccountName               = "C-Path Private AI POC"
+    ManagedOrganizationalUnit = "US - Control Tower"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "Test"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "DCC#28"
+    change_reason       = "create account"
+  }
+
+  custom_fields = {
+    group = "test"
+  }
+
+  account_customizations_name = "privateaipoc"
+}
