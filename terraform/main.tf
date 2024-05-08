@@ -1,55 +1,27 @@
-module "publicweb" {
+module "gitlabtest" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
-    AccountEmail              = "aws-account+pubweb_feuwngh@c-path.org"
-    AccountName               = "C-Path Public Website"
-    ManagedOrganizationalUnit = "US"
+    AccountEmail              = "aws-account+gitlabtest_fyutes@c-path.org"
+    AccountName               = "c-path-gitlab-test"
+    ManagedOrganizationalUnit = "US - Control Tower"
     SSOUserEmail              = "jbowen@c-path.org"
     SSOUserFirstName          = "Josh"
     SSOUserLastName           = "Bowen"
   }
 
   account_tags = {
-    "Learn Tutorial" = "AFT"
+    "Environment" = "Test"
   }
 
   change_management_parameters = {
-    change_requested_by = "HashiCorp Learn"
-    change_reason       = "Learn AWS Control Tower Account Factory for Terraform"
+    change_requested_by = "DCC#34"
+    change_reason       = "Create account"
   }
 
   custom_fields = {
     group = "prod"
   }
 
-  account_customizations_name = "publicweb"
-}
-
-module "publicwebhost" {
-  source = "./modules/aft-account-request"
-
-  control_tower_parameters = {
-    AccountEmail              = "aws-account+pubweb_zeqw12gh@c-path.org"
-    AccountName               = "C-Path Prod Public Website"
-    ManagedOrganizationalUnit = "US"
-    SSOUserEmail              = "kscollick@c-path.org"
-    SSOUserFirstName          = "Keith"
-    SSOUserLastName           = "Scollick"
-  }
-
-  account_tags = {
-    "Environment" = "Prod"
-  }
-
-  change_management_parameters = {
-    change_requested_by = "DRS-246"
-    change_reason       = "Create account for hosting public website media"
-  }
-
-  custom_fields = {
-    group = "prod"
-  }
-
-  account_customizations_name = "publicwebhost"
+  account_customizations_name = "gitlabtest"
 }
