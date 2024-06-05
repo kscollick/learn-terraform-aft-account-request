@@ -79,3 +79,57 @@ module "privateaipoc" {
 
   account_customizations_name = "privateaipoc"
 }
+module "cpathrnd" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+cprnd_ywnopx@c-path.org"
+    AccountName               = "C-Path RND"
+    ManagedOrganizationalUnit = "Consortia"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "Prod"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "DCC#47"
+    change_reason       = "create account"
+  }
+
+  custom_fields = {
+    group = "prod"
+  }
+
+  account_customizations_name = "cpathrnd"
+}
+module "cpathcpp" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+cpcpp_hdnlps@c-path.org"
+    AccountName               = "C-Path CPP"
+    ManagedOrganizationalUnit = "Consortia"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "Prod"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "DCC#64"
+    change_reason       = "create account"
+  }
+
+  custom_fields = {
+    group = "prod"
+  }
+
+  account_customizations_name = "cpathcpp"
+}
