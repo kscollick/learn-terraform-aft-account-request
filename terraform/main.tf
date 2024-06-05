@@ -79,11 +79,11 @@ module "privateaipoc" {
 
   account_customizations_name = "privateaipoc"
 }
-module "c-pathrnd" {
+module "cpathrnd" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
-    AccountEmail              = "aws-account+cprnd_opxywn@c-path.org"
+    AccountEmail              = "aws-account+cprnd_opwnxy@c-path.org"
     AccountName               = "C-Path RND"
     ManagedOrganizationalUnit = "Consortia (ou-4lxq-brt7nf7i)"
     SSOUserEmail              = "jbowen@c-path.org"
@@ -104,13 +104,13 @@ module "c-pathrnd" {
     group = "prod"
   }
 
-  account_customizations_name = "c-pathrnd"
+  account_customizations_name = "cpath-rnd"
 }
-module "c-pathcpp" {
+module "cpathcpp" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
-    AccountEmail              = "aws-account+cpcpp_lpshdn@c-path.org"
+    AccountEmail              = "aws-account+cpcpp_lpdnsh@c-path.org"
     AccountName               = "C-Path CPP"
     ManagedOrganizationalUnit = "Consortia (ou-4lxq-brt7nf7i)"
     SSOUserEmail              = "jbowen@c-path.org"
@@ -131,5 +131,5 @@ module "c-pathcpp" {
     group = "prod"
   }
 
-  account_customizations_name = "c-pathcpp"
+  account_customizations_name = "cpath-cpp"
 }
