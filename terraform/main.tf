@@ -85,7 +85,7 @@ module "cpathrnd" {
   control_tower_parameters = {
     AccountEmail              = "aws-account+cprnd_ywnopx@c-path.org"
     AccountName               = "C-Path RND"
-    ManagedOrganizationalUnit = "Consortia"
+    ManagedOrganizationalUnit = "Consortia (ou-4lxq-brt7nf7i)"
     SSOUserEmail              = "jbowen@c-path.org"
     SSOUserFirstName          = "Josh"
     SSOUserLastName           = "Bowen"
@@ -112,7 +112,7 @@ module "cpathcpp" {
   control_tower_parameters = {
     AccountEmail              = "aws-account+cpcpp_hdnlps@c-path.org"
     AccountName               = "C-Path CPP"
-    ManagedOrganizationalUnit = "Consortia"
+    ManagedOrganizationalUnit = "Consortia (ou-4lxq-brt7nf7i)"
     SSOUserEmail              = "jbowen@c-path.org"
     SSOUserFirstName          = "Josh"
     SSOUserLastName           = "Bowen"
