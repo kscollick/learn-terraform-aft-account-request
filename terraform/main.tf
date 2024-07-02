@@ -133,3 +133,30 @@ module "cpathcpp" {
 
   account_customizations_name = "cpath-cpp"
 }
+module "cpathpstc" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+cppstc_ghfcvs@c-path.org"
+    AccountName               = "C-Path PSTC"
+    ManagedOrganizationalUnit = "Consortia (ou-4lxq-brt7nf7i)"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "Prod"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "DCC#93"
+    change_reason       = "create account"
+  }
+
+  custom_fields = {
+    group = "prod"
+  }
+
+  account_customizations_name = "cpath-pstc"
+}
