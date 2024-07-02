@@ -133,12 +133,12 @@ module "cpathcpp" {
 
   account_customizations_name = "cpath-cpp"
 }
-module "cpathpstc" {
+module "cpathqm" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
-    AccountEmail              = "aws-account+cppstc_ghfcvs@c-path.org"
-    AccountName               = "C-Path PSTC"
+    AccountEmail              = "aws-account+cpqm_ighydb@c-path.org"
+    AccountName               = "C-Path QuantMed"
     ManagedOrganizationalUnit = "Consortia (ou-4lxq-brt7nf7i)"
     SSOUserEmail              = "jbowen@c-path.org"
     SSOUserFirstName          = "Josh"
@@ -150,7 +150,7 @@ module "cpathpstc" {
   }
 
   change_management_parameters = {
-    change_requested_by = "DCC#93"
+    change_requested_by = "DCC#108"
     change_reason       = "create account"
   }
 
@@ -158,5 +158,5 @@ module "cpathpstc" {
     group = "prod"
   }
 
-  account_customizations_name = "cpath-pstc"
+  account_customizations_name = "cpath-qm"
 }
