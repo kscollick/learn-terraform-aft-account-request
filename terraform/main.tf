@@ -160,3 +160,57 @@ module "cpathqm" {
 
   account_customizations_name = "cpath-qm"
 }
+module "cpathdcc" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+dcc_tkbqpl@c-path.org"
+    AccountName               = "C-Path DCC"
+    ManagedOrganizationalUnit = "US - Control Tower"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "Prod"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "DCC#149"
+    change_reason       = "create account"
+  }
+
+  custom_fields = {
+    group = "prod"
+  }
+
+  account_customizations_name = "cpath-eu-codr"
+}
+module "cpatheucodr" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+eucodr_fhjkls@c-path.org"
+    AccountName               = "C-Path EU CODR"
+    ManagedOrganizationalUnit = "US - Control Tower"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "Prod"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "DCC#149"
+    change_reason       = "create account"
+  }
+
+  custom_fields = {
+    group = "prod"
+  }
+
+  account_customizations_name = "cpath-eucodr"
+}
