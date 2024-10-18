@@ -268,3 +268,30 @@ module "fileuploaderuat" {
 
   account_customizations_name = "fileuploaderuat"
   }
+  module "sandboxaccelerometer" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+sandboxaccelerometer_hapmch@c-path.org"
+    AccountName               = "C-Path Sandbox Accelerometer"
+    ManagedOrganizationalUnit = "US - Control Tower"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "test"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "DCC#242"
+    change_reason       = "create account"
+  }
+
+  custom_fields = {
+    group = "test"
+  }
+
+  account_customizations_name = "sandboxaccelerometer"
+  }
