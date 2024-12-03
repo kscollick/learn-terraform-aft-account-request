@@ -273,7 +273,7 @@ module "cpathuploaderuat" {
 
   control_tower_parameters = {
     AccountEmail              = "aws-account+fileuploaderuat_gteoans@c-path.org"
-    AccountName               = "C-Path File Uploader UAT"
+    AccountName               = "C-Path FileUploader UAT"
     ManagedOrganizationalUnit = "US - Control Tower"
     SSOUserEmail              = "jbowen@c-path.org"
     SSOUserFirstName          = "Josh"
