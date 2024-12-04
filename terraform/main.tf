@@ -268,30 +268,3 @@ module "fileuploaderprod" {
 
   account_customizations_name = "sandboxhannah"
   }
-  module "cpathfileuploaderuatnew" {
-  source = "./modules/aft-account-request"
-
-  control_tower_parameters = {
-    AccountEmail              = "aws-account+fileuploaduat_snatre@c-path.org"
-    AccountName               = "C-Path File Uploader-UAT"
-    ManagedOrganizationalUnit = "US - Control Tower"
-    SSOUserEmail              = "jbowen@c-path.org"
-    SSOUserFirstName          = "Josh"
-    SSOUserLastName           = "Bowen"
-  }
-
-  account_tags = {
-    "Environment" = "test"
-  }
-
-  change_management_parameters = {
-    change_requested_by = "DCC#287"
-    change_reason       = "create account"
-  }
-
-  custom_fields = {
-    group = "test"
-  }
-
-  account_customizations_name = "cpathfileuploaderuatnew"
-  }
