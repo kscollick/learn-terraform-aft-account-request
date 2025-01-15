@@ -294,4 +294,31 @@ module "fileuploaderprod" {
   }
 
   account_customizations_name = "fileuploadcpathuat"
+}
+  module "sandboxglue" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+sandboxglue_uhftil@c-path.org"
+    AccountName               = "C-Path Sandbox Glue"
+    ManagedOrganizationalUnit = "US - Control Tower"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "test"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "DCC#322"
+    change_reason       = "create_account"
+  }
+
+  custom_fields = {
+    group = "test"
+  }
+
+  account_customizations_name = "sandboxglue"
   }
