@@ -322,3 +322,30 @@ module "fileuploaderprod" {
 
   account_customizations_name = "sandboxglue"
   }
+     module "c-path-t1d" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+cpatht1d_ydjopnm@c-path.org"
+    AccountName               = "C-Path T1D"
+    ManagedOrganizationalUnit = "US - Control Tower"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "test"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "DCC#342"
+    change_reason       = "create_account"
+  }
+
+  custom_fields = {
+    group = "prod"
+  }
+
+  account_customizations_name = "c-path-t1d"
+  }
