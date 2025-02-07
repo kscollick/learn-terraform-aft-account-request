@@ -349,3 +349,30 @@ module "fileuploaderprod" {
 
   account_customizations_name = "c-path-t1d"
   }
+    module "sandboxjd" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+sandboxjd_hupdxl@c-path.org"
+    AccountName               = "C-Path Sandbox JD"
+    ManagedOrganizationalUnit = "US - Control Tower"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "test"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "DCC#367"
+    change_reason       = "create account"
+  }
+
+  custom_fields = {
+    group = "test"
+  }
+
+  account_customizations_name = "sandboxjd"
+  }
