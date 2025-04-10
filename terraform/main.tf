@@ -403,3 +403,57 @@ module "fileuploaderprod" {
 
   account_customizations_name = "sandboxian"
   }
+       module "c-path-cpad" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+cpathcpad_uthpjn@c-path.org"
+    AccountName               = "C-Path CPAD"
+    ManagedOrganizationalUnit = "US - Control Tower"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "prod"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "DCC#402"
+    change_reason       = "create account"
+  }
+
+  custom_fields = {
+    group = "prod"
+  }
+
+  account_customizations_name = "c-path-cpad"
+  }
+    module "c-path-gitlab-prod" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+cpathgitlabprod_teblop@c-path.org"
+    AccountName               = "C-Path Gitlab Prod"
+    ManagedOrganizationalUnit = "US - Control Tower"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "prod"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "DCC#448"
+    change_reason       = "create account"
+  }
+
+  custom_fields = {
+    group = "prod"
+  }
+
+  account_customizations_name = "c-path-gitlab-prod"
+  }
