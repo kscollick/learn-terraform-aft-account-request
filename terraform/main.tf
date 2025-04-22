@@ -457,3 +457,30 @@ module "fileuploaderprod" {
 
   account_customizations_name = "c-path-gitlab-prod"
   }
+    module "c-path-gitlab-test" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+cpathgitlabtest_tyhndi@c-path.org"
+    AccountName               = "C-Path Gitlab Test"
+    ManagedOrganizationalUnit = "US - Control Tower"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "Test"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "New test project"
+    change_reason       = "create account"
+  }
+
+  custom_fields = {
+    group = "Test"
+  }
+
+  account_customizations_name = "c-path-gitlab-test"
+  }
