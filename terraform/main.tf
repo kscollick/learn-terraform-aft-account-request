@@ -484,3 +484,30 @@ module "fileuploaderprod" {
 
   account_customizations_name = "c-path-gitlab-test"
   }
+      module "sandboxrachel" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+sandboxrachel_tup8si@c-path.org"
+    AccountName               = "C-Path Sandbox Rachel"
+    ManagedOrganizationalUnit = "US - Control Tower"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "test"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "platform#16054"
+    change_reason       = "create account"
+  }
+
+  custom_fields = {
+    group = "test"
+  }
+
+  account_customizations_name = "sandboxrachel"
+  } 
