@@ -510,4 +510,32 @@ module "fileuploaderprod" {
   }
 
   account_customizations_name = "sandboxrachel"
+  }
+
+module "sandboxayan" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+sandboxayan_ytv4ls@c-path.org"
+    AccountName               = "C-Path Sandbox Ayan"
+    ManagedOrganizationalUnit = "US - Control Tower"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "test"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "platform#16342"
+    change_reason       = "create account"
+  }
+
+  custom_fields = {
+    group = "test"
+  }
+
+  account_customizations_name = "sandboxayan"
   } 
