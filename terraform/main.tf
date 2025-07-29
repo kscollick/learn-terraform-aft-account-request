@@ -572,3 +572,30 @@ module "cpathrdcaimport" {
 
   account_customizations_name = "cpathrdcaimport"
   }
+         module "c-path-cpp" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+cpathcpp_tjklnm@c-path.org"
+    AccountName               = "C-Path CPP"
+    ManagedOrganizationalUnit = "US - Control Tower"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "prod"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "16628"
+    change_reason       = "create account"
+  }
+
+  custom_fields = {
+    group = "prod"
+  }
+
+  account_customizations_name = "c-path-cpp"
+  }
