@@ -540,48 +540,21 @@ module "sandboxayan" {
   account_customizations_name = "sandboxayan"
   }
 
-#module "cpathrdcaimport" {
-#  source = "aws-ia/aft-account-request/aws"
-#
-#  control_tower_parameters = {
-#    AccountEmail              = "aws-account+rdca@c-path.org"
-#    AccountName               = "C-Path RDCA"
-#    ManagedOrganizationalUnit = "US - Control Tower"
-#    SSOUserEmail              = "jbowen@c-path.org"
-#    SSOUserFirstName          = "Josh"
-#    SSOUserLastName           = "Bowen"
-#  }
-#
-#  account_request_parameters = {
-#    request_type = "import"
-#    account_id   = "417631757239"
-#  }
-#
-#  account_tags = {
-#    "Environment" = "prod"
-#  }
-#
-#  change_management_parameters = {
-#    change_requested_by = "platform #16587"
-#    change_reason       = "Add RDCA to AFT"
-#  }
-#
-#custom_fields = {
- #   group = "prod"
-  #}
-#
-  #account_customizations_name = "cpathrdcaimport"
-  #}
-         module "c-path-cpp" {
-  source = "./modules/aft-account-request"
+module "cpathrdcaimport" {
+  source = "aws-ia/aft-account-request/aws"
 
   control_tower_parameters = {
-    AccountEmail              = "aws-account+cpathcpp_tjklnm@c-path.org"
-    AccountName               = "C-Path CPP"
+    AccountEmail              = "aws-account+rdca@c-path.org"
+    AccountName               = "C-Path RDCA"
     ManagedOrganizationalUnit = "US - Control Tower"
     SSOUserEmail              = "jbowen@c-path.org"
     SSOUserFirstName          = "Josh"
     SSOUserLastName           = "Bowen"
+  }
+
+  account_request_parameters = {
+    request_type = "import"
+    account_id   = "417631757239"
   }
 
   account_tags = {
@@ -589,13 +562,41 @@ module "sandboxayan" {
   }
 
   change_management_parameters = {
-    change_requested_by = "16628"
+    change_requested_by = "platform #16587"
+    change_reason       = "Add RDCA to AFT"
+  }
+
+custom_fields = {
+    group = "prod"
+  }
+
+  account_customizations_name = "cpathrdcaimport"
+  }
+
+module "fileuploadertestnew0725" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+fileuploadertest_ghjcvw@c-path.org"
+    AccountName               = "C-Path File Uploader Test"
+    ManagedOrganizationalUnit = "US - Control Tower"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "Test"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "redeploytest"
     change_reason       = "create account"
   }
 
   custom_fields = {
-    group = "prod"
+    group = "test"
   }
 
-  account_customizations_name = "c-path-cpp"
-  }
+  account_customizations_name = "fileuploadertestnew0725"
+}
