@@ -577,8 +577,8 @@ module "fileuploadertestnew0725" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
-    AccountEmail              = "aws-account+fileuploadertest_ghjcvw@c-path.org"
-    AccountName               = "C-Path File Uploader Test"
+    AccountEmail              = "aws-account+fileuploadertest2_grfbng@c-path.org"
+    AccountName               = "C-Path File Uploader Test 2"
     ManagedOrganizationalUnit = "US - Control Tower"
     SSOUserEmail              = "jbowen@c-path.org"
     SSOUserFirstName          = "Josh"
