@@ -512,33 +512,33 @@ module "fileuploaderprod" {
   account_customizations_name = "sandboxrachel"
   }
 
-module "sandboxayan" {
-  source = "./modules/aft-account-request"
-
-  control_tower_parameters = {
-    AccountEmail              = "aws-account+sandboxayan_ytv4ls@c-path.org"
-    AccountName               = "C-Path Sandbox Ayan"
-    ManagedOrganizationalUnit = "US - Control Tower"
-    SSOUserEmail              = "jbowen@c-path.org"
-    SSOUserFirstName          = "Josh"
-    SSOUserLastName           = "Bowen"
-  }
-
-  account_tags = {
-    "Environment" = "test"
-  }
-
-  change_management_parameters = {
-    change_requested_by = "platform#16342"
-    change_reason       = "create account"
-  }
-
-  custom_fields = {
-    group = "test"
-  }
-
-  account_customizations_name = "sandboxayan"
-  }
+#module "sandboxayan" {
+#  source = "./modules/aft-account-request"
+#
+#  control_tower_parameters = {
+#    AccountEmail              = "aws-account+sandboxayan_ytv4ls@c-path.org"
+#    AccountName               = "C-Path Sandbox Ayan"
+#    ManagedOrganizationalUnit = "US - Control Tower"
+#    SSOUserEmail              = "jbowen@c-path.org"
+#    SSOUserFirstName          = "Josh"
+#    SSOUserLastName           = "Bowen"
+#  }
+#
+#  account_tags = {
+#    "Environment" = "test"
+#  }
+#
+#  change_management_parameters = {
+#    change_requested_by = "platform#16342"
+#    change_reason       = "create account"
+#  }
+#
+#  custom_fields = {
+#    group = "test"
+#  }
+#
+#  account_customizations_name = "sandboxayan"
+#  }
 
 #module "cpathrdcaimport" {
 ##  source = "aws-ia/aft-account-request/aws"
@@ -653,4 +653,31 @@ module "sandboxworkspace" {
   }
 
   account_customizations_name = "sandboxworkspace"
+}
+module "cpathcodrus" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+codrus_bdqplm@c-path.org"
+    AccountName               = "C-Path CODR US"
+    ManagedOrganizationalUnit = "US - Control Tower"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "Prod"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "#17482"
+    change_reason       = "create account"
+  }
+
+  custom_fields = {
+    group = "test"
+  }
+
+  account_customizations_name = "cpathcodrus"
 }
