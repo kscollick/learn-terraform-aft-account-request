@@ -457,68 +457,6 @@ module "fileuploaderprod" {
 
   account_customizations_name = "sandboxrachel"
   }
-
-#module "sandboxayan" {
-#  source = "./modules/aft-account-request"
-#
-#  control_tower_parameters = {
-#    AccountEmail              = "aws-account+sandboxayan_ytv4ls@c-path.org"
-#    AccountName               = "C-Path Sandbox Ayan"
-#    ManagedOrganizationalUnit = "US - Control Tower"
-#    SSOUserEmail              = "jbowen@c-path.org"
-#    SSOUserFirstName          = "Josh"
-#    SSOUserLastName           = "Bowen"
-#  }
-#
-#  account_tags = {
-#    "Environment" = "test"
-#  }
-#
-#  change_management_parameters = {
-#    change_requested_by = "platform#16342"
-#    change_reason       = "create account"
-#  }
-#
-#  custom_fields = {
-#    group = "test"
-#  }
-#
-#  account_customizations_name = "sandboxayan"
-#  }
-
-#module "cpathrdcaimport" {
-##  source = "aws-ia/aft-account-request/aws"
-#
-#  control_tower_parameters = {
-#    AccountEmail              = "aws-account+rdca@c-path.org"
-#    AccountName               = "C-Path RDCA"
-#    ManagedOrganizationalUnit = "US - Control Tower"
-#    SSOUserEmail              = "jbowen@c-path.org"
-#    SSOUserFirstName          = "Josh"
-#    SSOUserLastName           = "Bowen"
-#  }
-#
-#  account_request_parameters = {
-#    request_type = "import"
-#    account_id   = "417631757239"
-#  }
-#
-#  account_tags = {
-#    "Environment" = "prod"
-#  }
-#
-#  change_management_parameters = {
-#    change_requested_by = "platform #16587"
-#    change_reason       = "Add RDCA to AFT"
-#  }
-#
-#custom_fields = {
-#    group = "prod"
-#  }
-#
-#  account_customizations_name = "cpathrdcaimport"
-#  }
-
 module "fileuploadertestnew0725" {
   source = "./modules/aft-account-request"
 
