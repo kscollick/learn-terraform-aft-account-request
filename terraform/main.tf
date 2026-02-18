@@ -538,3 +538,31 @@ module "cpathpoistpoc" {
 
   account_customizations_name = "cpathpoistpoc"
 }
+
+module "cpathtestaccounttf" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+testaft_uhytfd@c-path.org"
+    AccountName               = "C-Path Test Deploy AFT"
+    ManagedOrganizationalUnit = "US - Control Tower"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "Test"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "#test"
+    change_reason       = "demo account deploy"
+  }
+
+  custom_fields = {
+    group = "test"
+  }
+
+  account_customizations_name = "cpathtestaccounttf"
+}
