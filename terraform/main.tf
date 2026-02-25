@@ -187,33 +187,7 @@ module "fileuploaderprod" {
 
   account_customizations_name = "sandboxaccelerometer"
   }
-    module "sandboxhannah" {
-  source = "./modules/aft-account-request"
 
-  control_tower_parameters = {
-    AccountEmail              = "aws-account+sandboxhannah_gdtofs@c-path.org"
-    AccountName               = "C-Path Sandbox Hannah"
-    ManagedOrganizationalUnit = "US - Control Tower"
-    SSOUserEmail              = "jbowen@c-path.org"
-    SSOUserFirstName          = "Josh"
-    SSOUserLastName           = "Bowen"
-  }
-
-  account_tags = {
-    "Environment" = "test"
-  }
-
-  change_management_parameters = {
-    change_requested_by = "Keith"
-    change_reason       = "create account"
-  }
-
-  custom_fields = {
-    group = "test"
-  }
-
-  account_customizations_name = "sandboxhannah"
-  }
   module "fileuploadcpathuat" {
   source = "./modules/aft-account-request"
 
@@ -295,61 +269,8 @@ module "fileuploaderprod" {
 
   account_customizations_name = "c-path-t1d"
   }
-    module "sandboxjd" {
-  source = "./modules/aft-account-request"
 
-  control_tower_parameters = {
-    AccountEmail              = "aws-account+sandboxjd_hupdxl@c-path.org"
-    AccountName               = "C-Path Sandbox JD"
-    ManagedOrganizationalUnit = "US - Control Tower"
-    SSOUserEmail              = "jbowen@c-path.org"
-    SSOUserFirstName          = "Josh"
-    SSOUserLastName           = "Bowen"
-  }
-
-  account_tags = {
-    "Environment" = "test"
-  }
-
-  change_management_parameters = {
-    change_requested_by = "DCC#367"
-    change_reason       = "create account"
-  }
-
-  custom_fields = {
-    group = "test"
-  }
-
-  account_customizations_name = "sandboxjd"
-  }
-      module "sandboxian" {
-  source = "./modules/aft-account-request"
-
-  control_tower_parameters = {
-    AccountEmail              = "aws-account+sandboxian_ihtvbn@c-path.org"
-    AccountName               = "C-Path Sandbox Ian"
-    ManagedOrganizationalUnit = "US - Control Tower"
-    SSOUserEmail              = "jbowen@c-path.org"
-    SSOUserFirstName          = "Josh"
-    SSOUserLastName           = "Bowen"
-  }
-
-  account_tags = {
-    "Environment" = "test"
-  }
-
-  change_management_parameters = {
-    change_requested_by = "DCC#400"
-    change_reason       = "create account"
-  }
-
-  custom_fields = {
-    group = "test"
-  }
-
-  account_customizations_name = "sandboxian"
-  }
-       module "c-path-cpad" {
+     module "c-path-cpad" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
@@ -430,33 +351,7 @@ module "fileuploaderprod" {
 
   account_customizations_name = "c-path-gitlab-test"
   }
-      module "sandboxrachel" {
-  source = "./modules/aft-account-request"
 
-  control_tower_parameters = {
-    AccountEmail              = "aws-account+sandboxrachel_tup8si@c-path.org"
-    AccountName               = "C-Path Sandbox Rachel"
-    ManagedOrganizationalUnit = "US - Control Tower"
-    SSOUserEmail              = "jbowen@c-path.org"
-    SSOUserFirstName          = "Josh"
-    SSOUserLastName           = "Bowen"
-  }
-
-  account_tags = {
-    "Environment" = "test"
-  }
-
-  change_management_parameters = {
-    change_requested_by = "platform#16054"
-    change_reason       = "create account"
-  }
-
-  custom_fields = {
-    group = "test"
-  }
-
-  account_customizations_name = "sandboxrachel"
-  }
 module "fileuploadertestnew0725" {
   source = "./modules/aft-account-request"
 
