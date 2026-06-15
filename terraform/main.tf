@@ -487,3 +487,31 @@ module "cpathcodrustest" {
 
   account_customizations_name = "cpathcodrustest"
 }
+
+module "cpathpositprod" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+positprod_gonwt@c-path.org"
+    AccountName               = "C-Path POSIT Prod"
+    ManagedOrganizationalUnit = "US - Control Tower"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "Prod"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "create account"
+    change_reason       = "create account"
+  }
+
+  custom_fields = {
+    group = "prod"
+  }
+
+  account_customizations_name = "cpathpositprod"
+}
