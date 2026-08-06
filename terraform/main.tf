@@ -541,10 +541,10 @@ module "cpathtestafteraft" {
     group = "prod"
   }
 
-  account_customizations_name = "cpathtestafteraftvpc"
+  account_customizations_name = "cpathtestafteraft"
 }
 
-module "cpathtestafteraft" {
+module "cpathtestaftervpc" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
@@ -569,5 +569,5 @@ module "cpathtestafteraft" {
     group = "prod"
   }
 
-  account_customizations_name = "cpathtestafteraftvpc"
+  account_customizations_name = "cpathtestaftervpc"
 }
