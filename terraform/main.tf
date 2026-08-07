@@ -571,3 +571,32 @@ module "cpathtestaftervpc" {
 
   account_customizations_name = "cpathtestaftervpc"
 }
+
+
+module "cpathtestafter18" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-account+aft18upgrade@c-path.org"
+    AccountName               = "C-Path AFT Test 18 Upgrade"
+    ManagedOrganizationalUnit = "US - Control Tower"
+    SSOUserEmail              = "jbowen@c-path.org"
+    SSOUserFirstName          = "Josh"
+    SSOUserLastName           = "Bowen"
+  }
+
+  account_tags = {
+    "Environment" = "Prod"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "create account"
+    change_reason       = "create account"
+  }
+
+  custom_fields = {
+    group = "prod"
+  }
+
+  account_customizations_name = "cpathtestafter18"
+}
